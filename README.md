@@ -14,3 +14,8 @@ hopFakeData_name_address_sal_id_to_table.hpl
 ### Gera dados de salario e usa o calculator para obter o valor elevado ao quadrado.
 fake_price.hpl
 ![image](https://github.com/user-attachments/assets/448d7aed-83e7-4a82-abd1-87eaaf1ee3c2)
+
+### Gera dados de salario e usa o script python para converter para float e obter uma multiplicação do valor do salário por 20.
+python_script_generete_data_mult_sal_to_table.hpl
+![image](https://github.com/user-attachments/assets/7c45712c-e4ee-49f8-9e00-981e13e2cada)
+
