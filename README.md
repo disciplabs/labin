@@ -1,6 +1,15 @@
 # labin
 
 ## Pasta hop_etl
+
+### Usando hop com virtual env para processar dados usando pandas 
+
+![image](https://github.com/user-attachments/assets/8e651e10-31e6-42ce-8c19-c1464e7c66b1)
+
+Observe o conteúdo do arquivo python (normalmente não trabalha bem com acentos)
+![image](https://github.com/user-attachments/assets/a3dd99e4-d0c9-43b8-ad3a-31bf3ea70d42)
+
+
 ### criação de dados usando linguagem python
 python_script_generete_data.hpl
 
