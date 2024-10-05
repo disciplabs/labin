@@ -3,7 +3,9 @@
 ## Pasta hop_etl
 
 ### Usando hop com virtual env para processar dados usando pandas 
-
+script_run_venv_with_hop_sample.hpl<br>
+sample_script.py<br>
+Observe que neste caso configuramos um ambiente virtual para ...\apache-hop-client-2.8.0\myenv instalando o usando o requirements.txt 
 ![image](https://github.com/user-attachments/assets/8e651e10-31e6-42ce-8c19-c1464e7c66b1)
 
 Observe o conteúdo do arquivo python (normalmente não trabalha bem com acentos)
