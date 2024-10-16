@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Leds@123
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    networks:
+      - briefer_network
+
+  briefer:
+    image: briefercloud/briefer:latest # Substitua pelo nome correto da imagem do Briefer
+    container_name: briefer
+    ports:
+      - "3000:3000" # Substitua pela porta que o Briefer utiliza
+    environment:
+      - DB_SERVER=sqlserver
+      - DB_NAME=brieferdb
+      - DB_USER=sa
+      - DB_PASSWORD=Leds@123
+    depends_on:
+      - sqlserver
+    networks:
+      - briefer_network
+
+volumes:
+  sqlserver_data: {}  # Definição do volume nomeado
+  briefer_data: {}    # Definição do volume nomeado (exemplo se necessário)
+
+networks:
+  briefer_network:
+    driver: bridge
+
