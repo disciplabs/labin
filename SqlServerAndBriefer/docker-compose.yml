@@ -6,7 +6,7 @@ services:
     container_name: sqlserver
     environment:
       - ACCEPT_EULA=Y
-      - SA_PASSWORD=Leds@123
+      - SA_PASSWORD=Labin@123
     ports:
       - "1433:1433"
     volumes:
@@ -23,7 +23,7 @@ services:
       - DB_SERVER=sqlserver
       - DB_NAME=brieferdb
       - DB_USER=sa
-      - DB_PASSWORD=Leds@123
+      - DB_PASSWORD=Labin@123
     depends_on:
       - sqlserver
     networks:
