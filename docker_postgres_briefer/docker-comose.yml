@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15.8-bullseye  
+    container_name: postgres
+    environment:
+      - POSTGRES_DB=brieferdb
+      - POSTGRES_USER=brieferuser
+      - POSTGRES_PASSWORD=Labin123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - briefer_network
+
+  briefer:
+    image: briefercloud/briefer:latest
+    container_name: briefer
+    ports:
+      - "3000:3000" 
+    environment:
+      - DB_SERVER=postgres
+      - DB_NAME=brieferdb
+      - DB_USER=brieferuser
+      - DB_PASSWORD=Labin123
+      - DB_PORT=5432
+    depends_on:
+      - postgres
+    networks:
+      - briefer_network
+
+volumes:
+  postgres_data: {}  # Definição do volume nomeado
+
+networks:
+  briefer_network:
+    driver: bridge
