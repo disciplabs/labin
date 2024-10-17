@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  hop-gui:
+    build: .
+    container_name: hop_gui_bi
+    ports:
+      - "6080:80"      # Porta para acesso via navegador
+    volumes:
+      - hop_data:/opt/hop
+    environment:
+      - USER=developer # Usuário para login no ambiente
+      - PASSWORD=pass  # Senha para login no ambiente
+    shm_size: '1gb'     # Aumenta o tamanho de /dev/shm para 1GB
+
+volumes:
+  hop_data:
